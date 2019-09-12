@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">phone</th>
+      <th scope="col">username</th>
+      <th scope="col">website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users$">
+      <td>{{user.id}}</td>
+      <td><a routerLink="/user-details/{{user.id}}">{{ user.name }}</a></td>
+      <td>{{user.phone}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.website}}</td>
+    </tr>
+  </tbody>
+</table>

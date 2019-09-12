@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <h3>Details</h3>
+  </div>
+
+  <div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="row">
+                        <div class="col-6">
+                          <div class="form-inline">
+                              <label for="staticEmail" class="col-sm-2 col-form-label">Name:</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" name="name" [(ngModel)]="user.name">
+                              </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-inline">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">phone:</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="phone" [(ngModel)]="user.phone">
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="row">
+                          <div class="col-6">
+                            <div class="form-inline">
+                                <label for="staticEmail" class="col-sm-2 col-form-label">UserName:</label>
+                                <div class="col-sm-10">
+                                  <input type="text" class="form-control" name="username" [(ngModel)]="user.username">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="col-6">
+                              <div class="form-inline">
+                                  <label for="staticEmail" class="col-sm-2 col-form-label">Website:</label>
+                                  <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="website" [(ngModel)]="user.website">
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col">
+      <div class="row">
+        <h3>Post</h3>
+      </div>
+      <div class="row">
+      <div  *ngFor="let post of posts" style="margin-bottom: 1em;">
+          <div class="card">
+              <div class="card-header">
+                  {{post.title}}
+                </div>
+              <div class="card-body">
+                <p class="card-text">
+                  {{post.body}}
+                </p>
+              </div>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
