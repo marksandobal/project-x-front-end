@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -10,9 +9,9 @@ import { UsersComponent } from './dashboard/users/users.component';
 import { UserDetailsComponent } from './dashboard/user-details/user-details.component';
 import { LoginComponent } from './public/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-// import { ApiService } from './public/service/api.service';
-// import { CustomerService } from './public/service/customer.service';
 import { NeedAuthGuard } from './public/guards/NeedAuthGuard';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpInterceptorRequest } from './http-interceptor-request';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,14 @@ import { NeedAuthGuard } from './public/guards/NeedAuthGuard';
     HttpClientModule,
     FormsModule
   ],
-  providers: [NeedAuthGuard],
+  providers: [
+    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorRequest,
+    multi: true
+    },
+    NeedAuthGuard
+ ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
