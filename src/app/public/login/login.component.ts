@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     this.api.login(this.email, this.password).subscribe(result => {
       if(result.session.token){
         this.customer.setToken(result.session.token);
-        this.router.navigateByUrl('/dashboard')
+        this.router.navigateByUrl('')
       }
     });
   }
