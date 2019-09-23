@@ -16,7 +16,17 @@
       </li>
     </ul>
     <span class="navbar-text">
-      User
+      <div *ngIf="!isLogged()" (click)="rediredToLogin()">Login</div>
+      <div class="dropdown" *ngIf="isLogged()">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ user.first_name }} {{ user.last_name }}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <button class="dropdown-item" type="button">Profile</button>
+          <button class="dropdown-item" type="button">Configuration</button>
+          <button class="dropdown-item" type="button" (click)="logOut()">Logout</button>
+        </div>
+      </div>
     </span>
   </div>
 </nav>

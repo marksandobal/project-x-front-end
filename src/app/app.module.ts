@@ -12,6 +12,9 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { NeedAuthGuard } from './public/guards/NeedAuthGuard';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpInterceptorRequest } from './http-interceptor-request';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { HttpInterceptorRequest } from './http-interceptor-request';
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [
     {

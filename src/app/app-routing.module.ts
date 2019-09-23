@@ -14,11 +14,18 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: UsersComponent
+    component: UsersComponent,
+    canActivate: [NeedAuthGuard]
   },
   {
     path: 'user-details/:id',
-    component: UserDetailsComponent
+    component: UserDetailsComponent,
+    canActivate: [NeedAuthGuard]
+  },
+  {
+    path: 'user-details/new',
+    component: UserDetailsComponent,
+    canActivate: [NeedAuthGuard]
   },
   {
     path: 'login',
